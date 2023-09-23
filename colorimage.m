@@ -1,0 +1,37 @@
+img = imread('arman-bg.jpg');
+R=img;
+R(:,:,2:3)=0;
+G=img;
+G(:,:,1:2:3)=0;
+B=img;
+B(:,:,1:2)=0;
+subplot(3,3,1);
+imshow(img);
+title("RGB Image");
+subplot(3,3,2);
+imshow(R);
+title("Red band");
+subplot(3,3,3);
+imshow(G);
+title("Green band");
+subplot(3,3,4);
+imshow(B);
+title("Blue band");
+
+C=B+G;
+M=R+B;
+Y=R+G;
+subplot(3,3,5);
+imshow(C);
+title("Cyan band");
+subplot(3,3,6);
+imshow(M);
+title("Magenda band");
+subplot(3,3,7);
+imshow(Y);
+title("Yellow band");
+K=zeros(size(img));
+subplot(3,3,8);
+imshow(K);
+title("Black band");
+
